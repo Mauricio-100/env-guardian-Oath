@@ -27,10 +27,12 @@ APP_NAME=Mon Application
 PORT=3000
 DEBUG_MODE=true
 DATABASE_URL=postgres://user:pass@host:port/db
+```
 2. Utilisez Env-Guardian dans votre code :
 
 code
-```
+
+```bash
 JavaScript
 // Fichier: config.js
 import guardian from '@mauriciotukss2/env-guardian';
@@ -45,6 +47,7 @@ export const config = {
   debug: guardian.getBoolean('DEBUG_MODE', false),
   dbUrl: guardian.get('DATABASE_URL')
 };
+```
 ### API
 
 guardian.get(key, [defaultValue]): Récupère une variable en tant que chaîne de caractères.
