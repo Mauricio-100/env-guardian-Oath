@@ -1,0 +1,30 @@
+{
+  "name": "@mauriciotukss2/env-guardian",
+  "version": "1.0.0",
+  "description": "Un gestionnaire de configuration simple et robuste pour Node.js qui valide et type les variables d'environnement.",
+  "main": "index.js",
+  "type": "module",
+  "author": "mauriciotukss2",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mauricio-100/env-guardian.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "index.js",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "env",
+    "dotenv",
+    "config",
+    "validation",
+    "environment"
+  ]
+}
