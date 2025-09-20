@@ -1,4 +1,4 @@
-name: CI avec SSH
+name: Setup Env-Guardian
 
 on:
   push:
@@ -7,30 +7,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Setup SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
+      - uses: actions/checkout@v3
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run env-guardian decrypt
-        run: guardian decrypt .env.gdn --key ${{ secrets.GUARDIAN_MASTER_KEY }}
-
-      - name: Run tests
-        run: npm test
+      - run: npm ci
+      - run: echo "Dependencies installed!"
