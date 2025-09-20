@@ -1,8 +1,12 @@
-DRAGON LICENSE
+MIT License (with DRAGON LICENSE terms)
 
-Copyright (c) 2025 Mauricio-100. All rights reserved.
+Copyright (c) 2025 Mauricio
 
-This DRAGON License governs the use of the env-guardian software.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, subject to the following DRAGON LICENSE terms:
 
 1. GRANTED RIGHTS
 - Permission is granted to fork (copy and modify) the source code
@@ -25,5 +29,7 @@ This DRAGON License governs the use of the env-guardian software.
 - In no event shall the author be liable for damages resulting from its use
 
 For commercial use or extended licensing requests, contact: [your contact information]
+
+---
 
 This license is protected by international intellectual property laws.
