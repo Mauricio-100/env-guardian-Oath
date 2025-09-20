@@ -1,3 +1,5 @@
+######        © forged by Dragon🔥
+  
 ###### 🐲 Original project started by [mauricio-100](github.com/Mauricio-100.git) (🐉 MIT License by Dragon) 
 
 # env-guardian-dragon 🐉
@@ -20,168 +22,156 @@
 [![License](https://img.shields.io/github/license/mauricio-100/env-guardian-oath?style=for-the-badge)](./LICENSE)
 [![Powered by Mangrat AI](https://img.shields.io/badge/Powered%20by-Mangrat%20AI-orange?style=for-the-badge)](https://github.com/mauricio-100)
 
-**env-guardian-dragon 🐉: Ultimate Environment Security Suite.**
+# 🐉 ENV-GUARDIAN-DRAGON
 
-`env-guardian-dragon` est une solution de sécurité de nouvelle génération pour vos variables d'environnement.  
-Fini les fichiers `.env` non sécurisés : **centralisez, chiffrez et contrôlez l’accès** avec **AES-256-GCM** et **GitHub OAuth2**.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![npm version](https://img.shields.io/npm/v/@Mauricio-100/env-guardian-dragon?color=green)](https://www.npmjs.com/package/@Mauricio-100/env-guardian-dragon)
+[![Node.js](https://img.shields.io/badge/Node.js->=16.x-brightgreen?style=flat-square&logo=node.js)](https://nodejs.org/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-blue?style=flat-square&logo=github)](https://github.com/Mauricio-100/env-guardian-Oath)
+
+**Ultimate Environment Security Suite** : centralisez, chiffrez et protégez vos variables d’environnement avec style et sécurité militaire.
 
 ---
 
-## 🚀 Quick Start
+## 🔐 Description
+`env-guardian-dragon` est une suite complète pour sécuriser vos fichiers `.env` :
+- Chiffrement AES-256-GCM
+- Gestion des accès via GitHub OAuth2
+- CLI intuitive pour chiffrer/déchiffrer
+- Validation des schémas d’environnement
+- API Node.js pour intégration programmatique
+- Compatible CI/CD et cloud
 
-1. **Installation Globale**
-   ```bash
-   npm install -g env-guardian-dragon
+---
+
+## ⚡ Fonctionnalités
+
+### Sécurité
+- 🔒 Chiffrement AES-256-GCM de vos fichiers `.env`
+- 🗝 Authentification GitHub OAuth2
+- 📜 Audit log (bientôt)
+- 🔑 Clés éphémères pour tokens
+
+### Pour les développeurs
+- CLI simple :  
+  ```bash
+  env-guardian init
+  env-guardian encrypt .env
+  env-guardian decrypt .env.gdn
+  env-guardian push
+  env-guardian pull
 ````
 ````
-2. **Initialisation (Authentification via GitHub)**
- ```
-   guardian init
-   ```
 
-3. **Chiffrement de votre fichier `.env`**
+* Validation de schéma via `schema-forge`
+* API Node.js prête à l’emploi
 
-   ```bash
-   guardian encrypt .env
-   ```
+### Intégration cloud & CI/CD
 
-4. **Déchiffrement**
+* GitHub Actions / GitLab CI ready
+* Synchronisation d’équipe
+* Fonctionne sur cloud ou on-premise
 
-   ```bash
-   guardian decrypt .env.gdn
-   ```
+### Serveur externe
 
-> N'oubliez pas d’ajouter `.env` à votre `.gitignore`.
+* Node.js (`/Server/index.js`) pour gestion utilisateurs et tokens
+* Base MySQL avec création automatique de tables
+* PM2 pour tourner 24/7
+* Redirection automatique depuis la CLI pour GitHub OAuth
 
 ---
 
-## ✨ Features
-
-### 🛡️ Security First
-
-* **AES-256-GCM** : chiffrement de bout en bout.
-* **GitHub OAuth2** : gestion d’accès par équipes.
-* **Audit Logs** *(à venir)* : traçabilité complète.
-
-### ☁️ Cloud Integration
-
-* Compatible **CI/CD** (GitHub Actions, GitLab, etc).
-* **Partage d’équipe** via GitHub.
-* Fonctionne sur **AWS, GCP, Azure, on-premise**.
-
-### 💻 Developer Experience
-
-* CLI intuitive.
-* API Node.js pour intégrations custom.
-* Validation de schéma *(ex: schema-forge)*.
-
----
-
-## 📦 Installation
-
-### Prérequis
-
-* Node.js v16 ou supérieur
-* Compte GitHub
-
-### Installation Globale
+## 🛠 Installation
 
 ```bash
-npm install -g env-guardian-dragon
+npm install -g @Mauricio-100/env-guardian-dragon
 ```
 
-### Installation Locale
+**Initialisation de votre projet :**
 
 ```bash
-npm install --save-dev env-guardian-dragon
+env-guardian init
 ```
 
 ---
 
-## 🔑 GitHub OAuth Setup
+## 🚀 Usage
 
-1. Créez une [GitHub OAuth App](https://github.com/settings/developers).
+### Chiffrement d’un fichier `.env`
 
-   * **Callback URL** : `http://localhost:9999/callback`
+```bash
+env-guardian encrypt .env
+```
 
-2. Récupérez le **Client ID** & **Client Secret**.
+### Déchiffrement
 
-3. Fournissez-les lors de `guardian init`.
+```bash
+env-guardian decrypt .env.gdn
+```
 
----
+### Push & Pull (GitHub Secrets)
 
-## ⚙️ Exemple CI/CD (GitHub Actions)
-
-```yaml
-name: CI Pipeline
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      - run: npm install
-      - run: npm install -g env-guardian-dragon
-      - run: guardian decrypt .env.gdn --key ${{ secrets.GUARDIAN_MASTER_KEY }}
-      - run: npm run build
-      - run: npm test
+```bash
+env-guardian push
+env-guardian pull
 ```
 
 ---
 
-## 📊 Comparison
+## 🏗 Structure du projet
 
-| Feature            | env-guardian-dragon 🐉 | dotenv | dotenv-vault | GitHub Secrets |
-| ------------------ | ---------------------- | ------ | ------------ | -------------- |
-| AES-256-GCM        | ✅                      | ❌      | ✅            | ✅              |
-| GitHub OAuth       | ✅                      | ❌      | ❌            | ✅              |
-| CI/CD ready        | ✅                      | ❌      | ✅            | ✅              |
-| Schema validation  | ✅                      | ❌      | ❌            | ❌              |
-| Open-source & Free | ✅                      | ✅      | ❌ (payant)   | ✅              |
-
----
-
-## 🤝 Contributing
-
-1. Fork le projet
-2. `git clone https://github.com/Mauricio-100/env-guardian-oath.git`
-3. `git checkout -b feature/ma-feature`
-4. `npm install`
-5. `npm link` pour tester la CLI
-6. `git commit -m "feat: nouvelle feature"`
-7. `git push` & ouvre une Pull Request
-
----
-
-## 📜 License
-
-Distribué sous **MIT License (Dragon Edition 🐉)**.
-Voir [LICENSE](./LICENSE).
+```
+/env-guardian-Oath
+├── /Server               # Serveur Node.js
+│   └── index.js
+├── /bin
+│   └── env-guardian.js   # CLI principale
+├── /lib
+│   ├── auth.js
+│   ├── crypto.js
+│   ├── cli.js
+│   └── config.js
+├── /src
+│   └── commands          # Commandes CLI
+├── .gitignore
+├── .npmignore
+├── package.json
+└── README.md
+```
 
 ---
 
-## 🌍 Communauté
+## 🔧 Dépendances principales
 
-* [📟 WhatsApp](https://whatsapp.com/channel/0029VbBaQAfFcowCJIwta42y)
-* 
-* [🗃️ Gravatar Mauricio](https://gravatar.com/donutmortallya0023fc30d)
-* 
-* [👨‍👦 Patreon](https://www.patreon.com/c/Mauricio_100)
-* 
-* [📦 npm officiel](https://www.npmjs.com/package/env-guardian-dragon)
-* 
-* [❓ FAQ](https://github.com/Mauricio-100/env-guardian-Oath/blob/main/FAQ.md)
+* `axios`, `bcrypt`, `commander`, `inquirer`, `libsodium-wrappers`, `node-machine-id`, `open`
+* `mysql2`, `dotenv`
+* `jsonwebtoken` pour JWT
 
-### Telechargement Rapide
+---
 
-* [![npm version](https://img.shields.io/npm/v/env-guardian-dragon.svg?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/env-guardian-dragon)
+## ⚙️ Démarrage du serveur
+
+```bash
+pm2 start ./Server/index.js --name env-guardian-server
+```
+```
+pm2 save
+```
+
+---
+
+## 💡 Notes importantes
+
+* `.env` et `/Server` sont ignorés dans le dépôt (`.gitignore`) et npm (`.npmignore`)
+* Compatible Node.js >=16.x (iSH sur iPhone fonctionne)
+* Tous les modules doivent être installés (`npm install`) pour que le serveur fonctionne
+
+---
+
+## 📄 Licence
+
+MIT © Mauricio 🐉
+
+
+
+
