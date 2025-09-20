@@ -1,0 +1,25 @@
+# Ignore the server folder
+Server/
+
+# Ignore environment files
+.env
+.env.*
+
+# Ignore local config and logs
+*.log
+*.local
+*.tmp
+
+# Ignore test folders and development files
+/tests/
+*.test.js
+*.spec.js
+
+# Ignore CI/CD configs if not needed
+.github/
+.idea/
+.vscode/
+
+# Ignore node_modules (npm ignore does this by default)
+node_modules/
+

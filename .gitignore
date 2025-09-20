@@ -1,0 +1,34 @@
+# === Node.js ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# === Environment files ===
+.env
+.env.*.local
+.env.local
+
+# === Server ===
+/Server/
+*.db
+
+# === Logs ===
+logs/
+*.log
+*.out
+*.pid
+
+# === OS Files ===
+.DS_Store
+Thumbs.db
+
+# === IDE/Editors ===
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# === PM2 ===
+.pm2/
+
