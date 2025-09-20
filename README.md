@@ -1,8 +1,17 @@
 ### 🐲 Original project started.       (🐉 MIT License by Dragon) 
 
 # env-guardian-dragon 🐉
+![Dragon Verified](https://img.shields.io/badge/Dragon🐉-Verified✔️-black?style=for-the-badge&logo=github&logoColor=white) ![Verified](https://img.icons8.com/fluency/48/000000/verified-badge.png)
+
+
+
+
 
 <img width="1024" height="1024" alt="env-guardian-dragon logo" src="https://github.com/user-attachments/assets/39b87253-2882-495e-9e78-c59ca3d4909a" />
+
+
+
+[![Integrity](https://img.shields.io/badge/Integrity-ChatGPT%20Verified-8A2BE2?style=for-the-badge&logo=openai)](https://github.com/Mauricio-100/env-guardian-oath)
 
 [![npm version](https://img.shields.io/npm/v/env-guardian-dragon.svg?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/env-guardian-dragon)
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/mauricio-100/env-guardian-oath/ci.yml?style=for-the-badge&logo=github)](https://github.com/mauricio-100/env-guardian-oath/actions)
