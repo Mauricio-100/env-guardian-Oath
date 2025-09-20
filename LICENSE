@@ -1,35 +1,21 @@
-MIT License (with DRAGON LICENSE terms)
+MIT License
 
-Copyright (c) 2025 Mauricio
+Copyright (c) 2025 Mauricio <Mauriciokatana93@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, subject to the following DRAGON LICENSE terms:
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-1. GRANTED RIGHTS
-- Permission is granted to fork (copy and modify) the source code
-- Non-commercial distribution is allowed with proper attribution
-- Personal and academic use is permitted
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-2. RESTRICTIONS
-- Code theft or appropriation without attribution is prohibited
-- Removal of copyright notices is prohibited
-- Commercial use without express authorization is prohibited
-- Integration into commercial products without a license is prohibited
-
-3. GOOGLE INTEGRATION
-- This software may be integrated with Google services
-- Google is not affiliated with this project and does not endorse its use
-- Compliance with Google's terms of service is required
-
-4. WARRANTIES AND LIMITATIONS
-- The software is provided "as is", without warranty of any kind
-- In no event shall the author be liable for damages resulting from its use
-
-For commercial use or extended licensing requests, contact: [your contact information]
-
----
-
-This license is protected by international intellectual property laws.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
