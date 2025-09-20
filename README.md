@@ -164,8 +164,15 @@ Voir [LICENSE](./LICENSE).
 ## 🌍 Communauté
 
 * [📟 WhatsApp](https://whatsapp.com/channel/0029VbBaQAfFcowCJIwta42y)
+* 
 * [🗃️ Gravatar Mauricio](https://gravatar.com/donutmortallya0023fc30d)
+* 
 * [👨‍👦 Patreon](https://www.patreon.com/c/Mauricio_100)
+* 
 * [📦 npm officiel](https://www.npmjs.com/package/env-guardian-dragon)
+* 
 * [❓ FAQ](https://github.com/Mauricio-100/env-guardian-Oath/blob/main/FAQ.md)
 
+### Telechargement Rapide
+
+* [![npm version](https://img.shields.io/npm/v/env-guardian-dragon.svg?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/env-guardian-dragon)
