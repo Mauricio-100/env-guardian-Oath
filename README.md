@@ -3,7 +3,8 @@
 <img width="1024" height="1024" alt="ChatGPT Image 20 sept  2025 à 12_33_20" src="https://github.com/user-attachments/assets/39b87253-2882-495e-9e78-c59ca3d4909a" />
 
 
-[![ENV-GUARDIAN Protector](https://img.shields.io/badge/ENV--GUARDIAN-Protector-blueviolet?style=for-the-badge)](https://github.com/mauricio-100/env-guardian-oath)
+[![npm version](https://img.shields.io/npm/v/env-guardian-dragon.svg?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/env-guardian-dragon)
+
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/mauricio-100/env-guardian-oath/ci.yml?style=for-the-badge&logo=github)](https://github.com/mauricio-100/env-guardian-oath/actions)
 [![Encryption](https://img.shields.io/badge/Encryption-AES--256--GCM-green?style=for-the-badge)](https://en.wikipedia.org/wiki/Galois/Counter_Mode)
 [![Auth](https://img.shields.io/badge/Auth-GitHub%20OAuth2-informational?style=for-the-badge)](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps)
