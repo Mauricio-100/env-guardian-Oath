@@ -317,4 +317,4 @@ Ce projet est distribué sous la **licence MIT**. Voir le fichier `LICENSE` pour
 
 ### plus d'infos contacté notre FAQ
 
-[FAQ](https://github.com/mauricio-100/env-guardian-oath.git/FAQ.md)
+[FAQ](https://github.com/mauricio-100/env-guardian-oath/FAQ.md.git)
