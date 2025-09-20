@@ -29,4 +29,9 @@
     "node-machine-id": "^1.1.12",
     "open": "^8.4.0"
   }
+  "publishConfig": {
+  "registry": "https://npm.pkg.github.com/"
+},
+"name": "@Mauricio-100/env-guardian-dragon"
+
 }
