@@ -1,3 +1,5 @@
+### 🐲 Original project started by Mauricio(🐉 Dragon License)
+
 # env-guardian
 
 <img width="1024" height="1024" alt="ChatGPT Image 20 sept  2025 à 12_33_20" src="https://github.com/user-attachments/assets/39b87253-2882-495e-9e78-c59ca3d4909a" />
