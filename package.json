@@ -1,5 +1,5 @@
 {
-  "name": "env-guardian-dragon 🐉",
+  "name": "env-guardian-dragon",
   "version": "2.1.0",
   "description": "Secure environment variable management with GitHub OAuth integration p comme protector",
   "main": "bin/env-guardian.js",
