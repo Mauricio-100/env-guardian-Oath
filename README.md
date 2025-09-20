@@ -1,4 +1,4 @@
-### 🐲 Original project started by Mauricio(🐉 Dragon License)
+### 🐲 Original project started by Mauricio (🐉 MIT License by Dragon) 
 
 # env-guardian
 
