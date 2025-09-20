@@ -22,12 +22,14 @@
 [![License](https://img.shields.io/github/license/mauricio-100/env-guardian-oath?style=for-the-badge)](./LICENSE)
 [![Powered by Mangrat AI](https://img.shields.io/badge/Powered%20by-Mangrat%20AI-orange?style=for-the-badge)](https://github.com/mauricio-100)
 
-# 🐉 ENV-GUARDIAN-DRAGON
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![npm version](https://img.shields.io/npm/v/@Mauricio-100/env-guardian-dragon?color=green)](https://www.npmjs.com/package/@Mauricio-100/env-guardian-dragon)
 [![Node.js](https://img.shields.io/badge/Node.js->=16.x-brightgreen?style=flat-square&logo=node.js)](https://nodejs.org/)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-blue?style=flat-square&logo=github)](https://github.com/Mauricio-100/env-guardian-Oath)
+
+
+
+
+# 🐉 ENV-GUARDIAN-DRAGON
 
 **Ultimate Environment Security Suite** : centralisez, chiffrez et protégez vos variables d’environnement avec style et sécurité militaire.
 
@@ -62,7 +64,6 @@
   env-guardian pull
 ````
 ````
-
 * Validation de schéma via `schema-forge`
 * API Node.js prête à l’emploi
 
@@ -84,7 +85,7 @@
 ## 🛠 Installation
 
 ```bash
-npm install -g @Mauricio-100/env-guardian-dragon
+npm install -g env-guardian-dragon
 ```
 
 **Initialisation de votre projet :**
@@ -171,7 +172,5 @@ pm2 save
 ## 📄 Licence
 
 MIT © Mauricio 🐉
-
-
 
 
