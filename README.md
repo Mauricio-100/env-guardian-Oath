@@ -314,3 +314,7 @@ Ce projet est distribué sous la **licence MIT**. Voir le fichier `LICENSE` pour
 ### lien direct npm 
 
 [📦npm-agent](https://www.npmjs.com/package/env-guardian)
+
+### plus d'infos contacté notre FAQ
+
+[FAQ](https://github.com/mauricio-100/env-guardian-oath.git/FAQ.md)
