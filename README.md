@@ -1,5 +1,7 @@
 # env-guardian
-<img width="1024" height="1024" alt="Mauricio Image 20 sept  2025 à 11_25_00" src="https://github.com/user-attachments/assets/f10832c3-1e9e-4c82-896c-c0f2ea5c9dbc" />
+
+<img width="1024" height="1024" alt="ChatGPT Image 20 sept  2025 à 12_33_20" src="https://github.com/user-attachments/assets/39b87253-2882-495e-9e78-c59ca3d4909a" />
+
 
 [![ENV-GUARDIAN Protector](https://img.shields.io/badge/ENV--GUARDIAN-Protector-blueviolet?style=for-the-badge)](https://github.com/mauricio-100/env-guardian-oath)
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/mauricio-100/env-guardian-oath/ci.yml?style=for-the-badge&logo=github)](https://github.com/mauricio-100/env-guardian-oath/actions)
@@ -295,3 +297,20 @@ Ce projet est distribué sous la **licence MIT**. Voir le fichier `LICENSE` pour
 
 * Un grand merci à la communauté open-source pour les excellentes bibliothèques qui rendent ce projet possible.
 * Inspiré par la simplicité de `dotenv` et la sécurité de `dotenv-vault`.
+
+### notre chaine WhatsApp
+
+[📟chaine-WhatsApp](https://whatsapp.com/channel/0029VbBaQAfFcowCJIwta42yhttps://img.shields.io/badge/chaine-WhatsApp.com-blueviolet?style=for-the-badge)
+
+### nous somme aussi sur Gravatar
+
+[🗃️Gravatar-Mauricio](100]https://gravatar.com/donutmortallya0023fc30d)
+
+
+### plus d'infos sur Patreon
+
+[👨‍👦patreon-Mauricio-100](https://www.patreon.com/c/Mauricio_100)
+
+### lien direct npm 
+
+[📦npm-agent](https://www.npmjs.com/package/env-guardian)
