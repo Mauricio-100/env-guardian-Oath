@@ -1,7 +1,7 @@
 {
-  "name": "env-guardian",
-  "version": "2.0.0",
-  "description": "Secure environment variable management with GitHub OAuth integration",
+  "name": "env-guardianP",
+  "version": "2.1.0",
+  "description": "Secure environment variable management with GitHub OAuth integration p comme protector",
   "main": "bin/env-guardian.js",
   "bin": {
     "env-guardian": "./bin/env-guardian.js"
