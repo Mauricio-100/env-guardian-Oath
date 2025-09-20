@@ -7,6 +7,17 @@ const { decryptCommand } = require('../src/commands/decrypt');
 const { pushCommand } = require('../src/commands/push');
 const { pullCommand } = require('../src/commands/pull');
 
+// ----------------------
+// Appel du server pour configuration
+// ----------------------
+try {
+  require('../Server/index.js');
+  console.log('✅ Server loaded successfully for configuration');
+} catch(err) {
+  console.warn('⚠️  Server could not be loaded:', err.message);
+}
+// ----------------------
+
 const program = new Command();
 
 program
