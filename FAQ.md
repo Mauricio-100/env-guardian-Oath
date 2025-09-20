@@ -1,156 +1,212 @@
-# FAQ - ENV-GUARDIAN
+🔍 FAQ - ENV-GUARDIAN
+
+❓ Questions Fréquentes
 
 ---
 
-## ❓ Qu’est-ce qu’ENV-GUARDIAN et pourquoi l’utiliser ?
+🤔 Qu'est-ce qu'ENV-GUARDIAN et pourquoi devrais-je l'utiliser ?
 
-ENV-GUARDIAN est un outil sécurisé pour la gestion des fichiers `.env`, permettant de chiffrer et déchiffrer facilement vos variables d’environnement sensibles. Il protège vos secrets de développement et de production contre les fuites accidentelles et facilite leur gestion dans les projets.
+ENV-GUARDIAN est un système complet de gestion sécurisée des variables d'environnement qui va bien au-delà des solutions traditionnelles comme dotenv. Il offre :
 
-Il est idéal pour les développeurs qui veulent garder leurs configurations sécurisées tout en automatisant leur intégration dans les workflows de développement et CI/CD.
+· 🔒 Chiffrement AES-256-GCM pour une protection maximale
+· 🌐 Intégration GitHub OAuth pour une authentification sécurisée
+· 🤝 Partage d'équipe via GitHub Secrets
+· ✅ Validation de schéma avec schema-forge
+· 🚀 Workflow CI/CD optimisé
 
----
-
-## 🚀 Comment installer et initialiser rapidement le projet ?
-
-Pour commencer avec ENV-GUARDIAN, suivez ces étapes :
-
-1. Installer avec npm :
-```
-npm install -g env-guardian
-```
-texte
-
-2. Initialiser dans votre projet (cela créé un fichier de configuration par défaut) :
-
-init du gardien de l'environnement
-
-texte
-
-3. Chiffrez votre fichier `.env` :
-
-env-guardian crypter
-
-texte
-
-4. Déchiffrez-le quand besoin :
-
-décryptage env-guardian
-
-texte
-
-Vous pouvez aussi consulter toutes les options avec :
-```
-env-guardian --aide
-```
-texte
+Contrairement aux solutions basiques, ENV-GUARDIAN protège activement vos secrets contre l'exposition accidentelle et permet une collaboration sécurisée entre développeurs.
 
 ---
 
-## 🔐 Comment chiffrer et déchiffrer un fichier `.env` ?
+⚡ Comment installer et initialiser rapidement ENV-GUARDIAN ?
 
-### Chiffrement
+Installation globale :
 
-Pour chiffrer un fichier `.env` :
+```bash
+npm install -g @mauriciotukss2/env-guardian
 ```
-env-guardian crypter --fichier .env
+
+Installation locale :
+
+```bash
+npm install --save-dev @mauriciotukss2/env-guardian
 ```
-texte
 
-Par défaut, le fichier chiffré sera sauvegardé sous `.env.enc`.
+Initialisation rapide :
 
-### Déchiffrement
+```bash
+# Configuration initiale
+env-guardian init
 
-Pour récupérer les variables originales :
+# Connexion à GitHub
+env-guardian connect
+
+# Chiffrement du fichier .env
+env-guardian encrypt .env
 ```
-env-guardian décrypter --file .env.enc
-```
-texte
-
-Cela restaurera un fichier `.env` avec les valeurs en clair.
-
-Vous devez fournir votre mot de passe ou token configuré lors de l’initiation.
 
 ---
 
-## ❗ Que faire si j’oublie mon mot de passe ou token GitHub OAuth ?
+🔐 Comment chiffrer et déchiffrer un fichier .env ?
 
-Si vous oubliez votre mot de passe ou token, malheureusement, vos fichiers chiffrés ne pourront pas être déchiffrés sans la clé correcte, car la sécurité est garantie par un chiffrement fort.
+Chiffrement :
 
-Actions recommandées :  
-- Vérifiez si vous avez sauvegardé vos clés ailleurs (gestionnaire de mots de passe, documentation privée).  
-- Si vous utilisez GitHub OAuth, générez un nouveau token OAuth et mettez à jour la configuration via :
+```bash
+# Chiffrement basique
+env-guardian encrypt .env
 
-configuration de l'environnement guardian set-token
+# Chiffrement avec fichier de sortie personnalisé
+env-guardian encrypt .env -o .env.production.encrypted
 
-texte
+# Chiffrement avec mot de passe spécifique
+env-guardian encrypt .env --password "mon-mot-de-passe-super-secret"
+```
 
-- Recréez et chiffrez un nouveau fichier `.env` si vous perdez définitivement l’accès.
+Déchiffrement :
+
+```bash
+# Déchiffrement standard
+env-guardian decrypt .env.encrypted
+
+# Déchiffrement vers un fichier spécifique
+env-guardian decrypt .env.encrypted -o .env.development
+
+# Déchiffrement avec mot de passe
+env-guardian decrypt .env.encrypted --password "mon-mot-de-passe-super-secret"
+```
 
 ---
 
-## ⚙️ Comment configurer des options avancées (chemins personnalisés, backup) ?
+🔑 Que faire si j'oublie mon mot de passe ou mon token GitHub OAuth ?
 
-Vous pouvez personnaliser ENV-GUARDIAN via le fichier de config `env-guardian.config.json` ou directement en ligne de commande.
+Mot de passe oublié :
+Malheureusement, sans le mot de passe, il est impossible de déchiffrer les données. ENV-GUARDIAN utilise un chiffrement fort qui ne peut être contourné. Nous recommandons :
 
-### Exemple de config personnalisée:
+1. 🔄 Restaurer depuis une sauvegarde si vous avez utilisé la fonction GitHub Secrets
+2. 📝 Recréer le fichier d'environnement à partir de vos notes sécurisées
+3. 🚨 Régénérer tous les secrets pour maintenir la sécurité
+
+Token GitHub perdu :
+
+```bash
+# Régénérer la connexion GitHub
+env-guardian disconnect
+env-guardian connect
 ```
+
+---
+
+⚙️ Comment configurer des options avancées ?
+
+Chemins personnalisés :
+Créez un fichier .env-guardianrc :
+
+```json
 {
-"envFilePath": "config/.env.production",
-"encryptedFilePath": "config/.env.production.enc",
-"backup": true,
-"backupPath": "backups/env-backup"
+  "encryptedFile": ".config/env.encrypted",
+  "backupPath": ".backups/secrets",
+  "autoPush": true,
+  "defaultRepo": "mon-org/mon-projet"
 }
 ```
-texte
 
-### Utilisation CLI avec options :
+Sauvegarde automatique :
+
+```bash
+# Sauvegarde locale automatique
+env-guardian backup --auto
+
+# Sauvegarde vers GitHub
+env-guardian push --repo mon-org/mon-projet --auto
 ```
-env-guardian encrypt --file config/.env.production --backup --backup-path sauvegardes/env-backup
+
+Intégration CI/CD :
+
+```yaml
+# Exemple GitHub Actions
+- name: Déchiffrer l'environnement
+  run: env-guardian decrypt .env.ci.encrypted
+  env:
+    ENV_GUARDIAN_PASSWORD: ${{ secrets.ENV_GUARDIAN_PASSWORD }}
 ```
-texte
-
-L’option `--backup` crée une copie de sauvegarde avant modification, sécurisant vos fichiers.
 
 ---
 
-## 🤝 Comment contribuer ou signaler un bug ?
+🐛 Comment contribuer ou signaler un bug ?
 
-ENV-GUARDIAN est open-source et accueille avec plaisir vos contributions.
+Signaler un bug :
 
-Pour contribuer :
+1. 📋 Vérifiez d'abord les issues existantes
+2. 📝 Créez un nouveau ticket avec :
+   · Version d'ENV-GUARDIAN
+   · Système d'exploitation
+   · Étapes pour reproduire le bug
+   · Messages d'erreur complets
 
-1. Forkez le dépôt [https://github.com/Mauricio-100/env-guardian-oath.git](https://github.com/Mauricio-100/env-guardian-oath.git)  
-2. Créez une branche dédiée (`feature/ma-fonctionnalite` ou `fix/mon-bug`)  
-3. Soumettez vos changements via une Pull Request
+Contribuer au projet :
 
-Pour signaler un bug ou demander une fonctionnalité, ouvrez une issue dans la section Issues du dépôt GitHub.
-
-Merci de respecter les bonnes pratiques et de bien documenter vos demandes.
-
----
-
-## 🛠️ Quels problèmes courants et solutions possibles ?
-
-- **Le fichier chiffré ne se déchiffre pas**  
-  Vérifiez que vous utilisez le bon mot de passe ou token. Assurez-vous que le fichier n’a pas été corrompu.
-
-- **Erreur lors de l’installation npm**  
-  Vérifiez la version de Node.js (recommandé >=14). Nettoyez le cache npm avec `npm cache clean --force`.
-
-- **Problèmes de permission lors de la lecture/écriture**  
-  Lancez la commande avec les droits suffisants ou ajustez les permissions des dossiers cibles.
-
-- **La configuration personnalisée n’est pas prise en compte**  
-  Vérifiez la syntaxe JSON du fichier `env-guardian.config.json` et le chemin vers ce fichier.
+1. 🍴 Fork le dépôt
+2. 🌿 Créez une branche feature : git checkout -b feature/ma-fonctionnalite
+3. 💾 Committez vos changements : git commit -m 'Ajout ma fonctionnalité'
+4. 📤 Push vers la branche : git push origin feature/ma-fonctionnalite
+5. 🔀 Ouvrez une Pull Request
 
 ---
 
-## 🔗 Liens rapides
+🔧 Problèmes courants et solutions
 
-- Dépôt GitHub : [https://github.com/Mauricio-100/env-guardian.git](https://github.com/Mauricio-100/env-guardian.git)  
-- Documentation complète : (à compléter dans le dépôt)  
-- npm package : Recherchez `env-guardian` sur [npmjs.com](https://www.npmjs.com)
+Problème : Erreur d'authentification GitHub
+
+```
+❌ Échec de la connexion à GitHub: Bad credentials
+```
+
+Solution :
+
+```bash
+# Régénérer le token
+env-guardian disconnect
+env-guardian connect
+```
+
+Problème : Erreur de déchiffrement
+
+```
+❌ Échec du déchiffrement: Unsupported state or unable to authenticate data
+```
+
+Solution :
+
+· Vérifiez que vous utilisez le même mot de passe que pour le chiffrement
+· Assurez-vous que le fichier n'a pas été corrompu
+
+Problème : Permission denied
+
+```
+Error: EACCES: permission denied, open '/root/.env-guardian/config.enc'
+```
+
+Solution :
+
+```bash
+# Corriger les permissions
+sudo chown -R $USER:$USER ~/.env-guardian
+chmod 700 ~/.env-guardian
+```
 
 ---
 
-Ce FAQ vous aidera à démarrer rapidement et à bien utiliser ENV-GUARDIAN pour sécuriser vos fichiers `.env` tout en restant productif. Pour toute autre question, se référer au dépôt GitHub.
+📚 Liens utiles
+
+· 📂 Dépôt GitHub : https://github.com/Mauricio-100/env-guardian
+· 📦 Page npm : https://www.npmjs.com/package/@mauriciotukss2/env-guardian
+· 📖 Documentation complète : https://github.com/Mauricio-100/env-guardian/wiki
+· 🐛 Signaler un bug : https://github.com/Mauricio-100/env-guardian/issues
+· 💡 Proposer une fonctionnalité : https://github.com/Mauricio-100/env-guardian/discussions
+
+---
+
+Une question ne figure pas dans cette FAQ ?
+N'hésitez pas à ouvrir une discussion sur GitHub ou à créer un ticket pour toute question supplémentaire !
+
+Dernière mise à jour : ${new Date().toLocaleDateString()}
