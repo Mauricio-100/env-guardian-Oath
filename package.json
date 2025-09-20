@@ -1,5 +1,5 @@
 {
-  "name": "@Mauricio-100/env-guardian-dragon",
+  "name": "env-guardian-dragon",
   "version": "2.2.0",
   "description": "Secure environment variable management with GitHub OAuth integration as protector",
   "main": "bin/env-guardian.js",
@@ -16,10 +16,29 @@
     "security",
     "encryption",
     "github",
-    "oauth"
+    "oauth",
+    "cli"
   ],
-  "author": "Maurice Tukss",
+  "author": "Mauricio 🐉",
   "license": "MIT",
+  "files": [
+    "bin/",
+    "lib/",
+    "src/",
+    "README.md",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mauricio-100/env-guardian-Oath.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mauricio-100/env-guardian-Oath/issues"
+  },
+  "homepage": "https://github.com/Mauricio-100/env-guardian-Oath#readme",
+  "engines": {
+    "node": ">=16"
+  },
   "dependencies": {
     "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
@@ -28,8 +47,5 @@
     "libsodium-wrappers": "^0.7.10",
     "node-machine-id": "^1.1.12",
     "open": "^8.4.0"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }
