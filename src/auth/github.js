@@ -1,8 +1,11 @@
 const axios = require('axios');
 const crypto = require('crypto');
-const open = require('open');
 const http = require('http');
 const ConfigStore = require('../utils/config-store');
+const openBrowser = async (url) => {
+  const open = await import('open');
+  return open.default(url);
+};
 
 class GitHubOAuth {
   constructor() {
@@ -12,14 +15,8 @@ class GitHubOAuth {
     this.redirectUri = 'http://localhost:3000/auth/github/callback';
     this.state = crypto.randomBytes(20).toString('hex');
   }
-
-  async getAuthUrl() {
-    const params = new URLSearchParams({
-      client_id: this.clientId,
-      redirect_uri: this.redirectUri,
-      state: this.state,
-      scope: 'repo,write:packages,read:user'
-    });
+{
+   await openBrowser(authUrl);
 
     return `https://github.com/login/oauth/authorize?${params.toString()}`;
   }
