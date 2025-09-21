@@ -8,16 +8,8 @@ const { pushCommand } = require('../src/commands/push');
 const { pullCommand } = require('../src/commands/pull');
 
 // ----------------------
-// Appel du server pour configuration
+// Program CLI
 // ----------------------
-try {
-  require('../Server/index.js');
-  console.log('✅ Server loaded successfully for configuration');
-} catch(err) {
-  console.warn('⚠️  Server could not be loaded:', err.message);
-}
-// ----------------------
-
 const program = new Command();
 
 program
@@ -42,14 +34,28 @@ program
   .option('-o, --output <file>', 'Output file name', '.env')
   .action(decryptCommand);
 
+// ----------------------
+// push & pull : charge le serveur seulement si disponible
+// ----------------------
 program
   .command('push')
   .description('Push encrypted environment to GitHub Secrets')
-  .action(pushCommand);
+  .action(async () => {
+    try { require('../Server/index.js'); console.log('✅ Server loaded for push'); } 
+    catch(err) { console.warn('⚠️ Server not loaded (skipped in CI)'); }
+    await pushCommand();
+  });
 
 program
   .command('pull')
   .description('Pull environment from GitHub Secrets and decrypt')
-  .action(pullCommand);
+  .action(async () => {
+    try { require('../Server/index.js'); console.log('✅ Server loaded for pull'); } 
+    catch(err) { console.warn('⚠️ Server not loaded (skipped in CI)'); }
+    await pullCommand();
+  });
 
+// ----------------------
+// Parse CLI arguments
+// ----------------------
 program.parse();
