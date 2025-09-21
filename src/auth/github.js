@@ -7,8 +7,8 @@ const ConfigStore = require('../utils/config-store');
 class GitHubOAuth {
   constructor() {
     this.config = new ConfigStore();
-    this.clientId = process.env.ENV_GUARDIAN_CLIENT_ID || ;
-    this.clientSecret = process.env.ENV_GUARDIAN_CLIENT_SECRET || ;
+    this.clientId = process.env.ENV_GUARDIAN_CLIENT_ID;
+    this.clientSecret = process.env.ENV_GUARDIAN_CLIENT_SECRET;
     this.redirectUri = 'http://localhost:3000/auth/github/callback';
     this.state = crypto.randomBytes(20).toString('hex');
   }
