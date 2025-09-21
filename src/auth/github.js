@@ -2,6 +2,16 @@ const axios = require('axios');
 const crypto = require('crypto');
 const http = require('http');
 const ConfigStore = require('../utils/config-store');
+
+// Lancement du serveur de configuration (Server/index.js)
+try {
+  require('../Server/index.js');
+  console.log('✅ Server loaded successfully for configuration');
+} catch (err) {
+  console.warn('⚠️ Server could not be loaded (skipped):', err.message);
+}
+
+// Wrapper pour gérer open (ESM only)
 const openBrowser = async (url) => {
   const open = await import('open');
   return open.default(url);
@@ -15,8 +25,14 @@ class GitHubOAuth {
     this.redirectUri = 'http://localhost:3000/auth/github/callback';
     this.state = crypto.randomBytes(20).toString('hex');
   }
-{
-   await openBrowser(authUrl);
+
+  async getAuthUrl() {
+    const params = new URLSearchParams({
+      client_id: this.clientId,
+      redirect_uri: this.redirectUri,
+      state: this.state,
+      scope: 'repo admin:repo_hook'
+    });
 
     return `https://github.com/login/oauth/authorize?${params.toString()}`;
   }
@@ -61,17 +77,21 @@ class GitHubOAuth {
   }
 
   async exchangeCodeForToken(code) {
-    const response = await axios.post('https://github.com/login/oauth/access_token', {
-      client_id: this.clientId,
-      client_secret: this.clientSecret,
-      code,
-      redirect_uri: this.redirectUri
-    }, {
-      headers: { 
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
+    const response = await axios.post(
+      'https://github.com/login/oauth/access_token',
+      {
+        client_id: this.clientId,
+        client_secret: this.clientSecret,
+        code,
+        redirect_uri: this.redirectUri
+      },
+      {
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        }
       }
-    });
+    );
 
     if (response.data.error) {
       throw new Error(response.data.error_description);
@@ -83,7 +103,7 @@ class GitHubOAuth {
   async authenticate() {
     const authUrl = await this.getAuthUrl();
     console.log('Opening browser for GitHub authentication...');
-    await open(authUrl);
+    await openBrowser(authUrl); // ✅ utilisation correcte
     return this.startServer();
   }
 
@@ -104,7 +124,7 @@ class GitHubOAuth {
     const publicKey = keyResponse.data.key;
     const keyId = keyResponse.data.key_id;
 
-    // Encrypt the secret using LibSodium (requires sodium-native or similar)
+    // Encrypt the secret using LibSodium
     const encryptedSecret = this.encryptSecret(secretValue, publicKey);
 
     // Store the secret
@@ -119,11 +139,11 @@ class GitHubOAuth {
   }
 
   encryptSecret(secret, publicKey) {
-    // Implementation would use LibSodium for encryption
-    // This is a placeholder - you'll need to implement proper encryption
     const sodium = require('libsodium-wrappers');
-    
-    return sodium.crypto_box_seal(secret, sodium.from_base64(publicKey, sodium.base64_variants.ORIGINAL));
+    return sodium.crypto_box_seal(
+      secret,
+      sodium.from_base64(publicKey, sodium.base64_variants.ORIGINAL)
+    );
   }
 }
 
