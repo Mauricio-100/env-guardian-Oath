@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+const { Command } = require('commander');
+const program = new Command();
 const { connectCommand } = require('../src/commands/connect');
 const { encryptCommand } = require('../src/commands/encrypt');
 const { decryptCommand } = require('../src/commands/decrypt'); // vérifier que ce fichier existe aussi
