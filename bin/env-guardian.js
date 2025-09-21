@@ -1,11 +1,10 @@
 #!/usr/bin/env node
 
-const { Command } = require('commander');
 const { connectCommand } = require('../src/commands/connect');
 const { encryptCommand } = require('../src/commands/encrypt');
-const { decryptCommand } = require('../src/commands/decrypt');
-const { pushCommand } = require('../src/commands/push');
-const { pullCommand } = require('../src/commands/pull');
+const { decryptCommand } = require('../src/commands/decrypt'); // vérifier que ce fichier existe aussi
+const { pushCommand } = require('../src/commands/push');       // idem
+const { pullCommand } = require('../src/commands/pull');       // idem
 
 // ----------------------
 // Program CLI
