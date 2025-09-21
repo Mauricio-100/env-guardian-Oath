@@ -62,3 +62,8 @@ jobs:
 
       - name: Check npm version
         run: npm -v
+
+      - name: Clean npm cache
+        run: |
+         npm cache clean --force
+         rm -rf node_modules package-lock.json
