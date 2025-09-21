@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env-guardian
 
 const { connectCommand } = require('../src/commands/connect');
 const { encryptCommand } = require('../src/commands/encrypt');
