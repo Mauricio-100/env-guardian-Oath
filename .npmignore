@@ -1,5 +1,4 @@
 # Ignore the server folder
-Server/
 
 # Ignore environment files
 .env
